@@ -42,6 +42,26 @@ const server = http.createServer((req, res) => {
         }
       }
 
+      if(bodyJSONid==="answer2") {
+        if(bodyJSONdata==="Argentina") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem3.html"
+        } else {          
+          responseJSON.dialog = "incorrect!"
+          responseJSON.id = "problem2.html"
+        }
+      }
+
+      if(bodyJSONid==="answer3") {
+        if(bodyJSONdata==="neither") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem4.html"
+        } else {          
+          responseJSON.dialog = "incorrect!"
+          responseJSON.id = "problem3.html"
+        }
+      }
+
       /** Do not go beyond this section for now */
       res.end(JSON.stringify(responseJSON))
       console.log("All Responses: " + allResponsesArray)
